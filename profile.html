@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .full {
+            background-color: #0a434a;
+        }
+
+        .profile {
+            box-shadow: 1px 1px 10px black;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 200px;
+            background-color: #16373b;
+
+
+        }
+
+        h2 {
+            justify-content: left;
+            align-items: left;
+            text-align: left;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            letter-spacing: 1px;
+            font-size: 25px;
+            color: white;
+
+        }
+      
+        ul {
+            
+            display: flex;
+            gap: 80px;
+            justify-content: right;
+            list-style: none;
+            
+        }
+
+        ul li a {
+            text-decoration: none;
+
+            font-size: 20px;
+            font-weight: 900;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: inline-block;
+            position: relative;
+            color: #e0e3e5;
+
+        }
+
+        li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #dce1e4;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+
+        }
+
+        .about {
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+        .about img {
+            margin: 23px;
+            border-radius: 50%;
+
+            border: 3px solid black;
+            /* box-shadow: 0px 0px 10px 1px rgb(171, 170, 176); */
+            margin-right: 60px;
+            width: 300px;
+            height: 300px;
+
+
+        }
+
+
+
+        .name {
+            margin-top: 50px;
+            padding: 23px;
+            margin-left: 23px;
+
+
+        }
+
+        .name h1 {
+            letter-spacing: 2px;
+            color: #f1f6f6;
+            font-size: 50px;
+            font-family: 'Style Script', cursive;
+            animation: name 5s ease-out;
+            text-shadow: 1px 1px 10px #4dbbc7, 0 0 10px #4dbbc7;
+
+        }
+
+        @keyframes name {
+            0% {
+                text-shadow: 1px 1px 20px #2d9da9, 0 0 10px #4dbbc7;
+                opacity: 0;
+                margin-left: -800px;
+
+            }
+
+            20% {
+                text-shadow: 1px 1px 30px #34b3c1, 0 0 10px #4dbbc7;
+                opacity: 1;
+                margin-left: -800px;
+
+            }
+
+            80% {
+                text-shadow: 1px 1px 40px #34b3c1, 0 0 10px #4dbbc7;
+                opacity: 1;
+                margin-left: 0px;
+
+            }
+
+            100% {
+                text-shadow: 1px 1px 10px #4dbbc7, 0 0 10px #4dbbc7;
+                opacity: 1;
+                margin-left: 0px;
+
+            }
+        }
+
+        .name p {
+            margin-top: 20px;
+            margin-right: 12px;
+            padding: 12px;
+            font-family: monospace;
+            font-size: 16px;
+            color: white;
+            line-height: 25px;
+            font-style: italic;
+            font-weight: 700;
+            animation: paragraph 6s ease-out 0.75;
+        }
+
+        @keyframes paragraph {
+            0% {
+                transform: scale(0);
+                font-size: 0px;
+            }
+
+            30% {
+                font-size: 5px;
+                transform: scale(0.3);
+            }
+
+            50% {
+                transform: scale(0.6);
+                font-size: 9px;
+            }
+
+            70% {
+                transform: scale(0.9);
+                font-size: 14px;
+            }
+
+            100% {
+                transform: scale(1);
+                font-size: 16px;
+            }
+        }
+
+        .section {
+            /* background-color: #0087ca; */
+            padding: 23px;
+
+        }
+
+        section {
+            display: flex;
+            gap: 50px;
+            margin-left: 20px;
+
+        }
+
+        button {
+            position: relative;
+            padding: 10PX 30PX 10PX 30PX;
+            font-size: 20px;
+
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 1px 1px 10px #0087ca;
+            /* text-shadow: 1px 1px 6px rgb(104, 101, 101); */
+            border-radius: 23px;
+        }
+
+        button:hover {
+            letter-spacing: 3px;
+            transform: scale(1);
+            transition: all 0.25s ease-out;
+            background-color: #2d9da9;
+            color: white;
+            box-shadow: 1px 1px 10px #4dbbc7, 0 0 10px #4dbbc7;
+            border-right-color: rgb(0, 157, 255);
+            animation: border 2s ease;
+            border: 2px solid #4dbbc7;
+
+
+        }
+
+
+
+
+
+        .bt1 {
+            position: relative;
+            background: #ffff;
+            padding: 5px 12px;
+            margin: 5px;
+            width: 200px;
+            height: 50px;
+            font-size: 25px;
+            border-radius: 23px;
+            color: #060505;
+        }
+
+        .bt1:before,
+        .bt1:after {
+            position: absolute;
+            content: '';
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .bt1:before {
+            border-width: 0px 8px 10px 8px;
+
+            border-style: solid;
+            border-color: transparent transparent #0087ca transparent;
+            top: 65px;
+            transform: translateY(-20px);
+
+        }
+
+        .bt1:after {
+            content: attr(data-tooltip);
+            background: #0087ca;
+            width: 400px;
+            height: 300px;
+            font-size: 13px;
+            font-weight: 300;
+            top: 75px;
+            left: -10px;
+            padding: 10px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transform: translateY(-20px);
+        }
+
+        .bt1:hover::before,
+        .bt1:hover::after {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        @keyframes shake {
+            0% {
+                transform: rotate(2deg);
+            }
+
+            50% {
+                transform: rotate(-3deg);
+            }
+
+            70% {
+                transform: rotate(3deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        #anim:hover {
+            animation: shake 500ms ease-in-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="full">
+        <div class="profile">
+
+
+
+            <h2> Profile</h2>
+
+            <div class="nav">
+
+                <ul>
+
+                    <li><a href="#">About</a></li>
+
+
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Experince</a></li>
+                    <li><a href="#">skills</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="about">
+            <div class="name">
+                <h1>Hi I'am Revati Pawar</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi necessitatibus explicabo maxime
+                    molestias voluptates quod in dolorem ex dicta architecto tenetur quibusdam libero harum voluptatum,
+                    officia reprehenderit doloribus. Voluptatibus, a ipsum in unde nam eos excepturi deleniti. Delectus
+                    voluptatem voluptate iure perferendis dolorem esse assumenda temporibus laudantium rerum. In, odio?
+                </p>
+            </div>
+
+            <img src="bappa.jpg" alt="">
+        </div>
+
+        <div class="section">
+
+            <section>
+                <div class="one">
+                    <button class="bt1">Education</button>
+                    <div class="triangle"></div>
+                    <div class="pa"></div>
+                </div>
+
+                <span>
+                    <button c="bt2">About me</button>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus molestias illo cupiditate modi quia facilis ea earum. Recusandae sed ipsum mollitia nisi at commodi. Iste ab delectus numquam odit!</p> -->
+                </span>
+                <span>
+                    <button c="bt3">skills</button>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptates optio sapiente ipsa, ut molestias error quaerat quo autem, id, nisi similique? Voluptatum iste nihil quaerat dicta repellat ratione eveniet?</p> -->
+                </span>
+            </section>
+        </div>
+
+    </div>
+</body>
+
+</html>
