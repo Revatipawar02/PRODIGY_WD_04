@@ -25,7 +25,7 @@ menulist.style.maxHeight = "0px";
 
 function toggleMenu() {
     if (menulist.style.maxHeight == "0px") {
-        menulist.style.maxHeight = "100vh";
+        menulist.style.maxHeight = "100px";
 
     }
     else {
