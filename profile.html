@@ -2,369 +2,266 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-
-        }
-
-        .full {
-            background-color: #0a434a;
-        }
-
-        .profile {
-            box-shadow: 1px 1px 10px black;
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            gap: 200px;
-            background-color: #16373b;
-
-
-        }
-
-        h2 {
-            justify-content: left;
-            align-items: left;
-            text-align: left;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            letter-spacing: 1px;
-            font-size: 25px;
-            color: white;
-
-        }
-      
-        ul {
-            
-            display: flex;
-            gap: 80px;
-            justify-content: right;
-            list-style: none;
-            
-        }
-
-        ul li a {
-            text-decoration: none;
-
-            font-size: 20px;
-            font-weight: 900;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            display: inline-block;
-            position: relative;
-            color: #e0e3e5;
-
-        }
-
-        li a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #dce1e4;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-
-        li a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-
-        }
-
-        .about {
-            display: flex;
-
-            justify-content: space-between;
-        }
-
-        .about img {
-            margin: 23px;
-            border-radius: 50%;
-
-            border: 3px solid black;
-            /* box-shadow: 0px 0px 10px 1px rgb(171, 170, 176); */
-            margin-right: 60px;
-            width: 300px;
-            height: 300px;
-
-
-        }
-
-
-
-        .name {
-            margin-top: 50px;
-            padding: 23px;
-            margin-left: 23px;
-
-
-        }
-
-        .name h1 {
-            letter-spacing: 2px;
-            color: #f1f6f6;
-            font-size: 50px;
-            font-family: 'Style Script', cursive;
-            animation: name 5s ease-out;
-            text-shadow: 1px 1px 10px #4dbbc7, 0 0 10px #4dbbc7;
-
-        }
-
-        @keyframes name {
-            0% {
-                text-shadow: 1px 1px 20px #2d9da9, 0 0 10px #4dbbc7;
-                opacity: 0;
-                margin-left: -800px;
-
-            }
-
-            20% {
-                text-shadow: 1px 1px 30px #34b3c1, 0 0 10px #4dbbc7;
-                opacity: 1;
-                margin-left: -800px;
-
-            }
-
-            80% {
-                text-shadow: 1px 1px 40px #34b3c1, 0 0 10px #4dbbc7;
-                opacity: 1;
-                margin-left: 0px;
-
-            }
-
-            100% {
-                text-shadow: 1px 1px 10px #4dbbc7, 0 0 10px #4dbbc7;
-                opacity: 1;
-                margin-left: 0px;
-
-            }
-        }
-
-        .name p {
-            margin-top: 20px;
-            margin-right: 12px;
-            padding: 12px;
-            font-family: monospace;
-            font-size: 16px;
-            color: white;
-            line-height: 25px;
-            font-style: italic;
-            font-weight: 700;
-            animation: paragraph 6s ease-out 0.75;
-        }
-
-        @keyframes paragraph {
-            0% {
-                transform: scale(0);
-                font-size: 0px;
-            }
-
-            30% {
-                font-size: 5px;
-                transform: scale(0.3);
-            }
-
-            50% {
-                transform: scale(0.6);
-                font-size: 9px;
-            }
-
-            70% {
-                transform: scale(0.9);
-                font-size: 14px;
-            }
-
-            100% {
-                transform: scale(1);
-                font-size: 16px;
-            }
-        }
-
-        .section {
-            /* background-color: #0087ca; */
-            padding: 23px;
-
-        }
-
-        section {
-            display: flex;
-            gap: 50px;
-            margin-left: 20px;
-
-        }
-
-        button {
-            position: relative;
-            padding: 10PX 30PX 10PX 30PX;
-            font-size: 20px;
-
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: 800;
-            cursor: pointer;
-            box-shadow: 1px 1px 10px #0087ca;
-            /* text-shadow: 1px 1px 6px rgb(104, 101, 101); */
-            border-radius: 23px;
-        }
-
-        button:hover {
-            letter-spacing: 3px;
-            transform: scale(1);
-            transition: all 0.25s ease-out;
-            background-color: #2d9da9;
-            color: white;
-            box-shadow: 1px 1px 10px #4dbbc7, 0 0 10px #4dbbc7;
-            border-right-color: rgb(0, 157, 255);
-            animation: border 2s ease;
-            border: 2px solid #4dbbc7;
-
-
-        }
-
-
-
-
-
-        .bt1 {
-            position: relative;
-            background: #ffff;
-            padding: 5px 12px;
-            margin: 5px;
-            width: 200px;
-            height: 50px;
-            font-size: 25px;
-            border-radius: 23px;
-            color: #060505;
-        }
-
-        .bt1:before,
-        .bt1:after {
-            position: absolute;
-            content: '';
-            opacity: 0;
-            transition: all 0.4s ease;
-        }
-
-        .bt1:before {
-            border-width: 0px 8px 10px 8px;
-
-            border-style: solid;
-            border-color: transparent transparent #0087ca transparent;
-            top: 65px;
-            transform: translateY(-20px);
-
-        }
-
-        .bt1:after {
-            content: attr(data-tooltip);
-            background: #0087ca;
-            width: 400px;
-            height: 300px;
-            font-size: 13px;
-            font-weight: 300;
-            top: 75px;
-            left: -10px;
-            padding: 10px;
-            border-radius: 5px;
-            letter-spacing: 1px;
-            transform: translateY(-20px);
-        }
-
-        .bt1:hover::before,
-        .bt1:hover::after {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-
-        @keyframes shake {
-            0% {
-                transform: rotate(2deg);
-            }
-
-            50% {
-                transform: rotate(-3deg);
-            }
-
-            70% {
-                transform: rotate(3deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-        #anim:hover {
-            animation: shake 500ms ease-in-out forwards;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="full">
-        <div class="profile">
+  <header>
+    <nav>
+
+
+      <a href="#logo">Portfolio</a>
+      <ul class="#menulist">
+        <li><a href="#aboutme" class="active">About</a></li>
+        <li><a href="#Education">Education</a></li>
+        <li><a href="#skill">skills</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+      <svg onclick="toggleMenu()" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path fill="#ffffff"
+          d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+      </svg>
+
+    </nav>
 
 
 
-            <h2> Profile</h2>
-
-            <div class="nav">
-
-                <ul>
-
-                    <li><a href="#">About</a></li>
+  </header>
 
 
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Experince</a></li>
-                    <li><a href="#">skills</a></li>
-                </ul>
-            </div>
 
+  <main>
+    <div id="about">
+      <div class="name">
+        <h1>Hi I'am Revati Pawar</h1>
+        <p style="color: black;"> Welcome to <b style="color: rgb(0, 0, 0); font-size: 20px;">Revati's Portfolio!</b>
 
-        </div>
-        <div class="about">
-            <div class="name">
-                <h1>Hi I'am Revati Pawar</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi necessitatibus explicabo maxime
-                    molestias voluptates quod in dolorem ex dicta architecto tenetur quibusdam libero harum voluptatum,
-                    officia reprehenderit doloribus. Voluptatibus, a ipsum in unde nam eos excepturi deleniti. Delectus
-                    voluptatem voluptate iure perferendis dolorem esse assumenda temporibus laudantium rerum. In, odio?
-                </p>
-            </div>
+          Explore a showcase of my passion for creativity and innovation through design and development. From sleek UI designs to robust backend solutions, each project reflects dedication to excellence and a commitment to pushing boundaries. Join me on a journey where ideas come to life and every line of code tells a story.
+        </p>
+      </div>
 
-            <img src="bappa.jpg" alt="">
-        </div>
+      <div class="button">
 
-        <div class="section">
+        <span>
+          <button class="bt1">About me</button>
 
-            <section>
-                <div class="one">
-                    <button class="bt1">Education</button>
-                    <div class="triangle"></div>
-                    <div class="pa"></div>
-                </div>
+        </span>
+        <span>
+          <button class="bt2">Education</button>
 
-                <span>
-                    <button c="bt2">About me</button>
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus molestias illo cupiditate modi quia facilis ea earum. Recusandae sed ipsum mollitia nisi at commodi. Iste ab delectus numquam odit!</p> -->
-                </span>
-                <span>
-                    <button c="bt3">skills</button>
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptates optio sapiente ipsa, ut molestias error quaerat quo autem, id, nisi similique? Voluptatum iste nihil quaerat dicta repellat ratione eveniet?</p> -->
-                </span>
-            </section>
-        </div>
+        </span>
+        <span>
+          <button class="bt3">skills</button>
 
+        </span>
+        <span>
+          <button class="bt4">Project</button>
+        </span>
+        <span>
+          <button class="bt4">contact</button>
+        </span>
+
+      </div>
     </div>
+
+    <section id="aboutme">
+      <h3>
+        -- About Me --
+      </h3>
+      <div class="two">
+        <div class="img">
+          <img class="me" src="mypic.jpg" alt="" srcset="" width="220px">
+        </div>
+        <div class="inform">
+          <h6>Who I Am ?</h6>
+          <p>-- Hi, I'm <b style="color: rgb(255, 0, 0);font-size: 20px;">Revati Pawar</b>, studying Computer
+            Science for my Bachelor's degree. I'm learning coding, Data Structures and Algorithms (DSA), and
+            web development. I enjoy using technology to solve problems and am excited to learn more in this
+            field!</p>
+          <h6>Why Choose Me ?</h6>
+          <p> -- I bring dedication, a strong work ethic, and a passion for learning to every task. My skills
+            in coding, DSA, and web development are continuously growing, and I am eager to contribute to
+            projects with creativity and enthusiasm." in marathi</p>
+        </div>
+      </div>
+    </section>
+    <section id="Education">
+      <h3>-- Education --</h3>
+      <div class="edu">
+        <div class="card1">
+          <h6>Muktangan semi English Medium School & Jr. College of Science Borkund </h6>
+          <b>Year :-2020-22</b><br>
+          <b>Purcentage :- 83.17% </b>
+          <p>"I completed my 11th and 12th standard education in Science at Muktangan Junior College of
+            Science. This institution provided a comprehensive foundation in subjects like Physics,
+            Chemistry, Biology, and Mathematics, preparing me for further academic pursuits in the field of
+            science and technology."</p>
+        </div>
+        <hr>
+        <div class="card2">
+          <h6>SSVP'S Late kr. DR. P. R. Ghogrey Science College of Dhule</h6>
+          <b>Year :- 2022-25</b><br>
+          <b> CGPA :- 9.09</b>
+          <p> I am currently pursuing a Bachelor's degree in Computer Science. My academic journey is focused
+            on mastering coding, Data Structures and Algorithms (DSA), and web development. I am passionate
+            about leveraging technology to solve real-world problems and am eager to explore new avenues in
+            the ever-evolving field of computer science.</p>
+        </div>
+
+      </div>
+    </section>
+    <section id="skill">
+      <h3>-- My Skill --</h3>
+      <div class="intern">
+        <div class="exep">
+          <h6>INTERSHIP</h6>
+          <li>Prodigy InfoTech</li>
+          <h6>PROJECT</h6>
+          <li>E-Commerce website</li>
+          <li>portfolio(html,css,javascript)</li>
+          <h6>MY DEVELOPMENT SKILL</h6>
+          <P>I'm fimiliar and work on daily basic html, css, javascript</P>
+        </div>
+        <div class="skill">
+          <li>
+            <h4>HTML</h4>
+            <span class="bar">
+              <span class="html"></span>
+            </span>
+          </li>
+          <li>
+            <h4>CSS</h4>
+            <span class="bar">
+              <span class="css"></span>
+            </span>
+          </li>
+          <li>
+            <h4>JAVASCRIPT</h4>
+            <span class="bar">
+              <span class="javascript"></span>
+            </span>
+          </li>
+          <li>
+            <h4>C Language</h4>
+            <span class="bar">
+              <span class="c_lang"></span>
+            </span>
+          </li>
+        </div>
+      </div>
+    </section>
+    <section id="project">
+      <h3>-- My Project --</h3>
+      <div class="project">
+        <div class="pj">
+          <img src="e-commerce.jpg" alt="" width="250px" height="200px">
+          <a href="https://github.com/Revatipawar02/PRODIGY_WD_01.git">E-Commerce Website</a>
+          <p>E-Commerce website create in html, css, javascript. responsive nav bar create.
+          </p>
+        </div>
+        <div class="pj">
+          <img src="portfolio.jpg" alt="" width="250px" height="200px">
+          <a href="">Portfolio Website</a>
+          <p>Portfolio website create in html ,css ,javascript and many feature are use in the website </p>
+        </div>
+        <div class="pj">
+          <img src="game.jpg" alt="" width="250px" height="200px">
+          <a href="https://revatipawar02.github.io/PRODIGY_WD_03/">Tic-Tac-Toe Game</a>
+          <p>Tic-Tac-Toe game create in Html, Css, javascript</p>
+        </div>
+
+      </div>
+    </section>
+    <section id="contact">
+
+      <h1 class="section-header">Contact</h1>
+
+      <div class="contact-wrapper">
+
+        <!-- Left contact page -->
+
+        <form id="contact-form" class="form-horizontal" role="form">
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+            </div>
+          </div>
+
+          <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+          <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+            <div class="alt-send-button">
+              <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+            </div>
+
+          </button>
+
+        </form>
+
+        <!-- Left contact page -->
+
+        <div class="direct-contact-container">
+
+          <ul class="contact-list">
+            <li class="list-item"><i class="fa-solid fa-location-dot"></i><span class="contact-text place">Dhule,
+                Maharashtra</span></i></li>
+
+            <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a
+                    href="tel:1-212-555-5555" title="Give me a call">9623******</a></span></i></li>
+
+            <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#"
+                    title="Send me an email">revatipawar02@gmail.com</a></span></i></li>
+
+          </ul>
+
+          <hr>
+          <ul class="social-media-list">
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-square-instagram" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-square-whatsapp"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-linkedin"></i></a>
+            </li>
+          </ul>
+          <hr>
+
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+  </main>
 </body>
+<script src="script.js"></script>
 
 </html>
